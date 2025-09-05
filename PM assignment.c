@@ -12,7 +12,7 @@ char** initialize_the_Board(int N) {
     }
     return board;
 }
-
+// display the board......................................................
 void display_the_board ( char** board, int N){
      for (int i = 0; i < N; i++) {
         for (int j = 0; j <= N; j++) {
