@@ -59,7 +59,7 @@ int isDraw(char** board, int N) {
     return 1; 
     }
 }
-// Computer
+// Computer..................................................................
 void computer(char** board, int N) {
     int r, c;
     do {
@@ -88,16 +88,16 @@ int main() {
     }
 
     char **board = initialize_the_Board(N);
-    srand(time(NULL)); //randomness
+    srand(time(NULL)); //randomness............................................
 
-    int turn = 0; // 0 = X, 1 = O
+    int turn = 0; // 0 = X, 1 = O.................................................
     while (1) {
         display_the_board(board, N);
         int r, c;
         char sym = (turn == 0) ? 'X' : 'O';
         
            if (mode == 1 || (mode == 2 && turn == 0)) {
-            // Human
+            // Human...................................................................
             printf("Player %c, enter row[space]column (1-%d): ", sym, N);
             scanf("%d %d", &r, &c);
             r--; c--;
@@ -107,7 +107,7 @@ int main() {
             }
             board[r][c] = sym;
         } else {
-            // Computer
+            // Computer.................................................................
             computer(board, N);
         }
 
@@ -124,10 +124,10 @@ int main() {
         
        
 
-        turn = 1 - turn; // switch player
+        turn = 1 - turn; // switch player....................................................
     }
 
-    // Free memory
+    // Free memory...........................................................................
     for (int i = 0; i < N; i++) free(board[i]);
     free(board);
 
